@@ -1,0 +1,11 @@
+{
+  "Version": "2026-02-26",
+  "Project": "Aegis",
+  "ComplianceTarget": ["SOC2 Type II", "NIST 800-53"],
+  "Controls": {
+    "AC-1": "Access Control: MFA mandatory via Okta/AWS IAM",
+    "SC-7": "Boundary Protection: EKS Nodes in Private Subnets only",
+    "AU-2": "Audit Events: CloudWatch Logs enabled for all API calls",
+    "IA-2": "Identification and Authentication: OIDC Bridge for Zero-Trust"
+  }
+}
