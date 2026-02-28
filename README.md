@@ -12,15 +12,13 @@ Identity: Connects Okta to AWS IAM using OIDC.
 Automation: A Python-based engine scans for misconfigurations.
 
 📊 System Flow
-'''mermaid
-
+```mermaid
 graph TD
-
 User --> GitHub_Actions
 GitHub_Actions --> Terraform
 Terraform --> IAM_Roles
 IAM_Roles --> EKS_Cluster
 EKS_Cluster --> S3_Data_Lake
-'''
+```
 
 
