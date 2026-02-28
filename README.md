@@ -1,3 +1,4 @@
+```mermaid
 # Project Aegis: Multi-Cloud Identity & Automated Governance
 
 ## 🎯 Executive Summary
