@@ -4,6 +4,14 @@ Project Aegis is a Compliance-as-Code framework designed to automate security an
 
 🏗 Technical Architecture
 This project implements a "Defense-in-Depth" strategy:
+
+Network: Uses an AWS VPC with Private Subnets. EKS (Kubernetes) nodes are isolated from the public internet.
+
+Identity: Connects Okta to AWS IAM using OIDC. Leverages IRSA (IAM Roles for Service Accounts) for least-privilege access.
+
+Automation: A Python-based engine scans for misconfigurations (e.g., open S3 buckets) and provides automated remediation reports.
+
+📊 System Flow
 ## 🏗 Technical Architecture
 This project implements a "Defense-in-Depth" strategy:
 
