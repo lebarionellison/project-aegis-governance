@@ -13,7 +13,9 @@ Automation: A Python-based engine scans for misconfigurations.
 
 📊 System Flow
 '''mermaid
+
 graph TD
+
 User --> GitHub_Actions
 GitHub_Actions --> Terraform
 Terraform --> IAM_Roles
