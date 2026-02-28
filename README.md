@@ -1,10 +1,9 @@
-```mermaid
 Project Aegis: Multi-Cloud Identity & Automated Governance
-# Project Aegis: Multi-Cloud Identity & Automated Governance
+🎯 Executive Summary
+Project Aegis is a Compliance-as-Code framework designed to automate security and identity governance across AWS and Azure. It ensures infrastructure is audit-ready for SOC2 Type II and NIST 800-53.
 
-## 🎯 Executive Summary
-Project Aegis is a **Compliance-as-Code** framework designed to automate security and identity governance across AWS and Azure. It ensures infrastructure is audit-ready for **SOC2 Type II** and **NIST 800-53**.
-
+🏗 Technical Architecture
+This project implements a "Defense-in-Depth" strategy:
 ## 🏗 Technical Architecture
 This project implements a "Defense-in-Depth" strategy:
 
