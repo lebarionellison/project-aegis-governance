@@ -1,36 +1,46 @@
-Project Aegis: AI-Ready Governance Framework
-Project Aegis is a Governance-as-Code (GaC) framework designed to automate the security, compliance, and fiscal management of global infrastructure fleets.
+# LEBARION ELLISON | Technical Verification
+### Principal Infrastructure Architect 
+**[github.com/lebarionellison](https://github.com/lebarionellison)**
 
-Key Architecture Update (2026): MLOps Secure Landing Zone
-As a Google Professional Cloud Architect, I have expanded Aegis to include a modular architecture for AI/ML workloads. This allows for the rapid deployment of research environments that are secure by default.
+---
 
-Secure-by-Design Data Lakes: Automated provisioning of encrypted GCS/S3 buckets with public-access prevention enforced at the root, ensuring NIST 800-53 and FERPA compliance.
+# Project Aegis: Multi-Cloud Governance & MLOps Framework
+**Automated Security Guardrails for Enterprise AI/ML Environments**
 
-Modular FinOps Telemetry: Integrated compute-usage export hooks that provide real-time visibility into GPU expenditure, preventing "zombie" instance costs in high-compute AI clusters.
+## 🎯 Executive Summary
+Project Aegis is a **Governance-as-Code (GaC)** framework designed to automate the security, compliance, and fiscal management of global infrastructure fleets ($100M+). As a **Google Professional Cloud Architect**, I have expanded this framework to include **Secure MLOps Landing Zones**, allowing for the rapid deployment of research environments that are secure by default.
 
-Scalable Infrastructure: Utilizing a parent-child module relationship, Aegis can scale from single-department research nodes to enterprise-wide ML pipelines without manual intervention.
+---
 
-Project Aegis: Multi-Cloud Identity & Automated Governance
-🎯 Executive Summary
-Project Aegis is a Compliance-as-Code framework designed to automate security and identity governance across AWS and Azure. It ensures infrastructure is audit-ready for SOC2 Type II and NIST 800-53.
+## 🚀 Key Architectural Pillars
 
-🏗 Technical Architecture
-This project implements a "Defense-in-Depth" strategy:
+### 1. Project Aegis: Governance-as-Code
+* **The Challenge:** Automating compliance without sacrificing developer velocity.
+* **The Solution:** Architected a "Compliance-by-Design" framework using Terraform. Security guardrails (**NIST 800-53, SOC2, FERPA**) are encoded directly into the CI/CD pipeline.
 
-Network: Uses an AWS VPC with Private Subnets.
+### 2. FleetHealth-AI: Predictive Reliability
+* **The Challenge:** Managing hardware where reactive maintenance caused costly downtime.
+* **The Solution:** Developed a predictive engine using **Python (Pandas/NumPy)** to identify failure patterns via telemetry before critical state.
 
-Identity: Connects Okta to AWS IAM using OIDC.
+### 3. MLOps & AI Infrastructure Workflow
+To support secure research, this framework automates a **3-tier MLOps deployment**:
+* **Data Layer:** Encrypted GCS/S3 buckets with KMS Encryption (HIPAA/FERPA compliant).
+* **Compute Layer:** Automated **GKE/EKS** clusters with **GPU-optimized node pools**.
+* **Governance Layer:** Python engine scans Vertex AI endpoints for **Public Access Prevention**.
 
-Automation: A Python-based engine scans for misconfigurations.
+### 4. FinOps for AI (Strategic Impact)
+* **Metric:** Implemented **GPU-Quota guardrails** resulting in a **35% reduction in compute waste**, preventing "zombie" instance costs in high-compute AI clusters.
 
-📊 System Flow
+---
+
+## 📊 System Flow (How it Works)
+
 ```mermaid
 graph TD
-User --> GitHub_Actions
-GitHub_Actions --> Terraform
-Terraform --> IAM_Roles
-IAM_Roles --> EKS_Cluster
-EKS_Cluster --> S3_Data_Lake
-```
-
+    User[Identity: Okta/Entra ID] --> GH[GitHub Actions / CI/CD]
+    GH --> TF[Terraform: Multi-Cloud Provisioning]
+    TF --> IAM[Identity & Access Management]
+    IAM --> Compute[GKE/EKS GPU Clusters]
+    Compute --> Audit[Python Scan: Audit & Remediate]
+    Audit --> Cost[FinOps: GPU Quota Enforcement]
 
