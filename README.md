@@ -1,5 +1,18 @@
 # LEBARION ELLISON | Technical Verification
 ### Principal Infrastructure Architect 
+
+---
+
+## 📖 Table of Contents
+* [🎯 Executive Summary](#-executive-summary)
+* [🚀 Key Architectural Pillars](#-key-architectural-pillars)
+* [📊 System Flow (How it Works)](#-system-flow-how-it-works)
+* [🏗 Modular Design Pattern](#-modular-design-pattern)
+* [🔗 External Portfolio (PDF)](path-to-your-file-if-uploaded)
+
+---
+# LEBARION ELLISON | Technical Verification
+### Principal Infrastructure Architect 
 **[github.com/lebarionellison](https://github.com/lebarionellison)**
 
 ---
