@@ -1,0 +1,90 @@
+# Project Aegis: Autonomous Fleet Orchestration Manifest
+# Purpose: Orchestrates Agentic AI Inference Workers with NIST-compliant Guardrails
+# Infrastructure Layer: Azure Kubernetes Service (AKS) / GKE
+# Author: Lebarion Ellison
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agentic-inference-orchestrator
+  namespace: project-aegis
+  labels:
+    app: ai-factory
+    tier: orchestration
+    compliance: nist-ai-rmf
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: agentic-worker
+  template:
+    metadata:
+      annotations:
+        # Custom Metric for Agentic Scaling
+        prometheus.io/scrape: "true"
+        aegis.governance/enforcement-mode: "strict"
+      labels:
+        app: agentic-worker
+    spec:
+      # Zero-Trust Security Context
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+      
+      containers:
+      - name: agent-node
+        image: aegis-registry.azurecr.io/agentic-orchestrator:v2.0.26
+        resources:
+          limits:
+            nvidia.com/gpu: 1 # Explicit GPU Passthrough for LLM Inference
+            memory: "32Gi"
+            cpu: "8"
+          requests:
+            nvidia.com/gpu: 1
+            memory: "16Gi"
+            cpu: "4"
+        
+        # Agentic Guardrails (Environment Variables)
+        env:
+        - name: NIST_GUARDRAIL_LEVEL
+          value: "high"
+        - name: MAX_AUTONOMOUS_SPEND_LIMIT
+          value: "5000" # FinOps: Prevents Agentic Over-provisioning
+        - name: VECTOR_DB_ENDPOINT
+          valueFrom:
+            configMapKeyRef:
+              name: aegis-config
+              key: vector_db_url
+
+      # Node Affinity for H100/A100 Clusters
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: accelerator
+                operator: In
+                values:
+                - nvidia-h100
+                - nvidia-a100
+
+---
+# Automated Scaling Policy based on AI Inference Latency
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: agent-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: agentic-inference-orchestrator
+  minReplicas: 3
+  maxReplicas: 50
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
