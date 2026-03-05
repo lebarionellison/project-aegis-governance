@@ -5,8 +5,16 @@
 
 ---
 
-## 🛡️ Project Aegis: The Infrastructure Control Plane
-**Project Aegis** is a Governance-as-Code framework designed to bridge the "Governance Gap" in AI/ML pipelines. It automates **NIST 800-53** and **SOC2** compliance across $100M+ ecosystems.
+🛡️ Project Aegis: The Infrastructure Control Plane
+
+Project Aegis is a Governance-as-Code framework designed to bridge the "Governance Gap" in AI/ML pipelines. It automates NIST 800-53 and SOC2 compliance across $100M+ ecosystems.
+
+🚀 Key Capabilities:
+
+* **[Agentic AI Guardrails](./project-aegis-governance-orchestration.yaml):** Automated runtime policies and Kubernetes manifests for autonomous AI workflows.
+* **[AI Factory Orchestration](./project-aegis-governance-orchestration.yaml):** Zero-Trust provisioning of encrypted H100/A100 GPU clusters via AKS/GKE (See YAML for Resource Limits & Affinity).
+* **FinOps Engine:** Python-based telemetry identifying and terminating "zombie" cloud resources (35% cost reduction).
+* **Self-Healing Systems:** Automated remediation of security drifts to maintain 99.9% uptime.
 
 ### 🚀 Key Capabilities:
 * **Agentic AI Guardrails:** Automated runtime policies for autonomous AI workflows.
