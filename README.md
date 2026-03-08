@@ -64,9 +64,32 @@ Project Aegis is a Governance-as-Code framework designed to bridge the "Governan
 * **HashiCorp Certified: Terraform Associate**
 * **NIST AI Risk Management Framework (RMF) Specialist**
 
+
+
 ---
 
 ## 📫 Connect with Me
 - **LinkedIn:** [linkedin.com/in/lebarionellison](https://linkedin.com/in/lebarionellison)
 - **Portfolio:** [github.com/lebarionellison](https://github.com/lebarionellison)
 - **Email:** barry.ellison@comcast.net
+
+
+## Technical Architecture
+---
+
+## 🛠 Technical Deep Dive: Agentic Infrastructure & Governance
+
+Project Aegis represents a shift from static automation to **Stateful Multi-Agent Orchestration**. The architecture focuses on solving the "Autonomy Risk" inherent in agentic systems by treating governance as a programmable infrastructure layer.
+
+### 1. Stateful Orchestration via LangGraph
+Instead of linear chains, agents are connected via a **Directed Acyclic Graph (DAG)**. 
+* **Shared State:** Agents utilize a global state schema, ensuring the "Security Agent" and "Provisioning Agent" maintain consistent context during a $100M+ fleet deployment.
+* **Autonomous Hand-offs:** Utilizing **AutoGen**, agents negotiate infrastructure parameters (e.g., reconciling GPU passthrough needs with NIST security baselines) before code execution.
+
+### 2. The Governance Middleware (NIST AI RMF)
+Aegis injects a **Governance Layer** directly into the agent connection edges:
+* **Conditional Gating:** Connections between "Intent" and "Action" agents are gated by a real-time policy engine.
+* **The Circuit Breaker:** If an agent proposes a high-risk change, the connection is severed and the system triggers a **Human-in-the-loop (HITL)** checkpoint.
+
+### 3. Distributed Memory Fabric
+* **Vector Synchronization:** Utilizing **Pinecone/Milvus**, Aegis ensures that when the "Compliance Agent" learns a new regulatory update, it is semantically indexed and immediately accessible to all other agents in the cluster.
