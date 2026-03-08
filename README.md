@@ -1,11 +1,18 @@
 graph TD
     A[User Request] --> B{Aegis Governance Layer}
+
     B -- Fails NIST RMF --> C[Circuit Breaker/Log]
+
     B -- Passes NIST RMF --> D[Planning Agent]
+
     D <--> E[Stateful Memory: Pinecone]
+
     D --> F[Security Auditor Agent]
+
     F --> G[Execution Agent: Terraform]
+
     G --> H[Multi-Cloud Infrastructure]
+
     E <--> G
 
 # Lebarion Ellison
